@@ -17,9 +17,9 @@ Vagrant.configure("2") do |config|
   end
 end
 
-  # specific for ubuntu1
-  config.vm.define "ubuntu1" do |ubuntu1|
-    ubuntu1.vm.hostname = "ubuntu1"
+  # specific for jenkins
+  config.vm.define "jenkins" do |ubuntu1|
+    ubuntu1.vm.hostname = "jenkins"
     ubuntu1.vm.network "private_network", ip: "192.168.56.101"
   end
 
