@@ -29,7 +29,7 @@
       apt_repository: repo='deb https://pkg.jenkins.io/debian-stable binary/' state=present
       become: yes
 
-        - name: Install JAVA related Ubuntu packages
+    - name: Install JAVA related Ubuntu packages
       apt:
         name: "{{ packages }}"
         state: latest
