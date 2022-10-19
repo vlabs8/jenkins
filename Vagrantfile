@@ -19,8 +19,9 @@ end
   config.vm.define "jenkins" do |jenkins|
     jenkins.vm.hostname = "jenkins"
     jenkins.vm.network "private_network", ip: "192.168.56.101"
+    jenkins.vm.provision "shell" do |shell|
+      shell.path = "jenkins.sh"
   end
-
 
   # specific for ubuntu2
   #config.vm.define "ubuntu2" do |ubuntu2|
