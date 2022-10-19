@@ -29,6 +29,15 @@
       apt_repository: repo='deb https://pkg.jenkins.io/debian-stable binary/' state=present
       become: yes
 
+        - name: Install JAVA related Ubuntu packages
+      apt:
+        name: "{{ packages }}"
+        state: latest
+      vars:
+        packages:
+          - default-jre
+          - default-jdk
+
     - name: ensure jenkins is installed
       apt: name=jenkins update_cache=yes
       become: yes
