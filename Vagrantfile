@@ -24,6 +24,7 @@ end
     jenkins.vm.provision "shell" do |shell|
       shell.path = "jenkins.sh"
   end
+end
 
   # specific for ubuntu2
   #config.vm.define "ubuntu2" do |ubuntu2|
