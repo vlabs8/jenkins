@@ -7,21 +7,20 @@
 # setting for all VMs
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/focal64"
-  config.vm.provision "ansible_local", playbook: "jenkins.yml"
+  #config.vm.provision "ansible_local", playbook: "jenkins.yml"
   config.vm.provider "virtualbox" do |v|
     v.memory = 4096
     v.cpus = 2
   config.vm.network "forwarded_port", guest: 8080, host:8080
-  config.vm.provision "shell" do |shell|
-    shell.path = "jenkins.sh"
-  end
+
 end
 
   # specific for jenkins
-  config.vm.define "jenkins" do |ubuntu1|
-    ubuntu1.vm.hostname = "jenkins"
-    ubuntu1.vm.network "private_network", ip: "192.168.56.101"
+  config.vm.define "jenkins" do |jenkins|
+    jenkins.vm.hostname = "jenkins"
+    jenkins.vm.network "private_network", ip: "192.168.56.101"
   end
+
 
   # specific for ubuntu2
   #config.vm.define "ubuntu2" do |ubuntu2|
