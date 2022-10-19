@@ -26,9 +26,9 @@ end
   end
 end
 
-  # specific for ubuntu2
-  #config.vm.define "ubuntu2" do |ubuntu2|
-  #  ubuntu2.vm.hostname = "ubuntu2"
-  #  ubuntu2.vm.network "private_network", ip: "192.168.56.102"
-  #end
+   specific for ubuntu2
+  config.vm.define "ubuntu2" do |ubuntu2|
+    ubuntu2.vm.hostname = "ubuntu2"
+    ubuntu2.vm.network "private_network", ip: "192.168.56.102"
+  end
 end
