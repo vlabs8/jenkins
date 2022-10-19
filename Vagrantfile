@@ -15,6 +15,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell" do |shell|
     shell.path = "jenkins.sh"
   end
+end
 
   # specific for ubuntu1
   config.vm.define "ubuntu1" do |ubuntu1|
